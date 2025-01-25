@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile-page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="w-full p-1 flex bg-slate-200">
+        <div class="w-full p-1  px-4 flex items-center " >
+            <a href="" class="text-lg font-medium"><i class="fa-solid fa-arrow-left"></i> Profile</a>
+        </div>
+
+        <div class="w-full p-1 flex items-center justify-end gap-1"  >
+            <div class="p-1 px-2 rounded-3xl bg-white border-2 flex items-center" >
+                <div class="p-1 rounded-full bg-green-50"><img src="https://cdn-icons-png.flaticon.com/128/2800/2800321.png" alt="" width="20" height="20"></div>
+                <span class="text-xs font-medium">Get <i class="fa-solid fa-indian-rupee-sign"></i> 500</span>
+            </div>
+            <button type="button" class="rounded-md  px-3.5 py-2.5 text-xl font-semibold text-gray-700 hover:bg-gray-50"><i class="fa-solid fa-bell"></i></button>
+        </div>
+    </div>
+
+    <div class="overflow-hidden  bg-white shadow">
+        <div class="px-4 py-2 sm:p-6">
+
+            <div class="grid grid-cols-2 gap-2">
+
+                <div  class="relative flex items-center space-x-2 rounded-lg border border-gray-300 bg-white px-2 py-3 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+                  <div class="w-full flex gap-1 items-center" >
+                    <a href="/profiledetails.html"><span><i class="fa-solid fa-circle-info text-lg"></i></span> <span class="font-normal text-gray-700 text-sm">Personal Details</span>
+                    </a>
+                  </div>
+                  
+                </div>
+              
+                <div class="relative flex items-center space-x-2 rounded-lg border border-gray-300 bg-white px-2 py-3 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+                    <div class="w-full flex gap-1 items-center" >
+                        <a href="/backprofile.html"><span><i class="fa-solid fa-circle-notch text-lg"></i></span> <span class="font-normal text-gray-700 text-sm"> Activity Segments</span>
+                        </a>
+                    </div>
+
+                  </div>
+
+                  <div class="relative flex items-center space-x-2 rounded-lg border border-gray-300 bg-white px-2 py-3 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+                    <div class="w-full flex gap-1 items-center " >
+                        <span><i class="fa-solid fa-suitcase text-lg"></i></span> <span class="font-normal text-gray-700 text-sm"> Demat Details</span>
+                    </div>
+
+                  </div>
+
+                  <div class="relative flex items-center space-x-2 rounded-lg border border-gray-300 bg-white px-2 py-3 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+                    <div class="w-full flex gap-1 items-center" >
+                        <span><i class="fa-solid fa-file text-lg"></i></span> <span class="font-normal text-gray-700 text-sm"> My Reports</span>
+
+                    </div>
+
+                  </div>
+              
+              </div>
+              
+        </div>
+      </div>
+      
+
+      <div class="overflow-hidden mt-2 bg-white shadow">
+        <div class="px-2 py-2 ">
+            <div>
+                <button 
+                  id="accordion-btn"
+                  class="flex items-center justify-between w-full px-4 py-2 text-left  text-black font-medium rounded-lg"
+                >
+                  <p class="text-sm">Manage Accounts <br> <span class="text-xs font-light">DDPI Status, MTF, Funds Settlements Frequency...</span></p>
+                  <svg id="accordion-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.44l3.71-3.25a.75.75 0 011.02 1.1l-4 3.5a.75.75 0 01-1.02 0l-4-3.5a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+          
+                <div 
+                  id="accordion-content" 
+                  class="mt-2 py-2 text-gray-600 bg-gray-50 rounded-lg hidden"
+                >
+                  <ul class="flex flex-col gap-2">
+
+                    <li class="flex justify-between items-center">
+                        <a href="/backtoprofile.html" class="flex items-center gap-1">
+                            <div class="p-1" >
+                                <img src="https://cdn-icons-png.flaticon.com/128/2258/2258853.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">Bank Account <br> <span class="text-xs font-light">Add or Edit Bank Detail</span></p>
+                                 
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>
+
+                    <li class="flex justify-between items-center">
+                        <a href="" class="flex items-center gap-1">
+                            <div class="p-2" >
+                                <img src="https://cdn-icons-png.flaticon.com/128/7129/7129941.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">DDPI Status                                 <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">Inactive</span>
+                                    <br> <span class="text-xs font-light">Demat Debit and Pledging Instructions</span></p>                                  
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>
+
+                    <li class="flex justify-between items-center">
+                        <a href="" class="flex items-center gap-1">
+                            <div class="p-2" >
+                                <img src="https://cdn-icons-png.flaticon.com/128/4722/4722817.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">MTF <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Active</span> <br> <span class="text-xs font-light">Activate Margin Trading Facility</span></p> 
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>
+
+                    <li class="flex justify-between items-center">
+                        <a href="" class="flex items-center gap-1">
+                            <div class="p-2" >
+                                <img src="	https://cdn-icons-png.flaticon.com/128/1092/1092216.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">Funds Settlement Frequency <br> <span class="text-xs font-light">Frequency of Receving Unused  Funds</span></p>
+                                 
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>    
+
+                    <li class="flex justify-between items-center">
+                        <a href="" class="flex items-center gap-1">
+                            <div class="p-2" >
+                                <img src="	https://cdn-icons-png.flaticon.com/128/1159/1159633.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">Transfer Stock <br> <span  class="text-xs font-light">Transfer stocks to Any Demat Account</span></p>   
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>
+
+
+                    <li class="flex justify-between items-center">
+                        <a href="" class="flex items-center gap-1">
+                            <div class="p-2" >
+                                <img src="https://cdn-icons-png.flaticon.com/128/102/102649.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">Temporary Account Freeze <br> <span class="text-xs font-light">Temporarily Blocking Trading/Investing</span></p>   
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>
+
+                    <li class="flex justify-between items-center">
+                        <a href="" class="flex items-center gap-1">
+                            <div class="p-2" >
+                                <img src="https://cdn-icons-png.flaticon.com/128/2734/2734822.png" alt="" width="25" height="25">
+                            </div>
+                             <div>
+                                <p class="text-sm font-medium text-gray-700">Close Demat & Trading Account  <br> <span class="text-xs font-light">Close Your Account</span></p>
+                                
+                            </div>
+                        </a>
+                        <i class="fa-solid fa-caret-right p-2"></i>
+                    </li> <hr>
+                  
+                    </ul>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+
+      <script>
+        const accordionBtn = document.getElementById('accordion-btn');
+        const accordionContent = document.getElementById('accordion-content');
+        const accordionIcon = document.getElementById('accordion-icon');
+    
+        accordionBtn.addEventListener('click', () => {
+          accordionContent.classList.toggle('hidden');
+          accordionIcon.classList.toggle('rotate-180');
+        });
+      </script>
+</body>
+</html>
